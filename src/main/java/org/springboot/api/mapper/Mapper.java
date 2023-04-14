@@ -18,6 +18,16 @@ public class Mapper {
                 .build();
     }
 
+    public static AccountEntity map(Account a) {
+        return AccountEntity.builder()
+                .accountId(a.getAccountId())
+                .customerId(a.getCustomerId())
+                .empId(a.getEmpId())
+                .accBranchName(a.getBranchName())
+                .acountStart(a.getStartYear())
+                .build();
+    }
+
     public static Customer map(CustomerEntity c) {
         return Customer.builder()
                 .empId(c.getEmpId())

@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Getter
 public class EmployeeEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "emp_id")
     int empId;
     @Column(name = "emp_fname")

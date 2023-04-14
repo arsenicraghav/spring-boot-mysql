@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+
 @Builder
 @Getter
 @AllArgsConstructor
@@ -13,5 +14,5 @@ public class Account {
     int empId;
     int customerId;
     String branchName;
-    String startYear;
+    Integer startYear;
 }

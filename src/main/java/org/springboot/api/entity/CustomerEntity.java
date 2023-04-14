@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Getter
 public class CustomerEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     int customerId;
     @Column(name = "customer_fname")

@@ -1,16 +1,24 @@
 package org.springboot.api.entity;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "account")
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class AccountEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "account_id")
     int accountId;
     @Column(name = "emp_id")
@@ -20,7 +28,5 @@ public class AccountEntity {
     @Column(name = "accbranch_name")
     String accBranchName;
     @Column(name = "acount_start")
-    String acountStart;
-
-
+    Integer acountStart;
 }
