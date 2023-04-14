@@ -3,23 +3,26 @@ package org.springboot.api.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springboot.api.dto.Employee;
-import org.springboot.api.service.EmployeeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springboot.api.service.impl.EmployeeServiceImpl;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping(path = "/lotus/v1")
+@RequestMapping(path = "/api/v1")
 @RequiredArgsConstructor
 public class EmployeeController {
 
-    private final EmployeeService employeeService;
+    private final EmployeeServiceImpl employeeServiceImpl;
 
     @GetMapping(path = "/employees")
     public List<Employee> getEmployees() {
-        return employeeService.getAllEmployee();
+        return employeeServiceImpl.getAllEmployee();
+    }
+
+    @GetMapping(value = "/employees/{id}")
+    public @ResponseBody Employee getEmployeeById(@PathVariable Integer id) {
+        return employeeServiceImpl.getEmployeeById(id);
     }
 }

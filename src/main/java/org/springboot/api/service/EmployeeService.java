@@ -1,25 +1,12 @@
 package org.springboot.api.service;
 
-import lombok.RequiredArgsConstructor;
 import org.springboot.api.dto.Employee;
-import org.springboot.api.entity.EmployeeEntity;
-import org.springboot.api.mapper.Mapper;
-import org.springboot.api.repository.EmployeeRespository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-@RequiredArgsConstructor
-public class EmployeeService {
+public interface EmployeeService {
 
-    private final EmployeeRespository employeeRespository;
+    public List<Employee> getAllEmployee();
 
-    public List<Employee> getAllEmployee() {
-
-        return ((List<EmployeeEntity>) employeeRespository.findAll())
-                .stream()
-                .map(Mapper::map)
-                .toList();
-    }
+    public Employee getEmployeeById(Integer id);
 }
