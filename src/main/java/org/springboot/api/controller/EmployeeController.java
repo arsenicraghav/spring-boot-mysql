@@ -1,5 +1,6 @@
 package org.springboot.api.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springboot.api.dto.Employee;
@@ -12,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api/v1")
 @RequiredArgsConstructor
+@Tag(name = "Employee API")
 public class EmployeeController {
 
     private final EmployeeServiceImpl employeeServiceImpl;

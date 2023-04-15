@@ -1,5 +1,6 @@
 package org.springboot.api.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springboot.api.dto.Account;
@@ -13,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api/v1")
 @RequiredArgsConstructor
+@Tag(name = "Account API")
 public class AccountController {
 
     private final AccountServiceImpl accountServiceImpl;
